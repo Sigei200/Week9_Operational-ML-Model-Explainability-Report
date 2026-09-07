@@ -1,0 +1,63 @@
+{
+    "total_samples": 10000,
+    "failure_count": 339,
+    "nominal_count": 9661,
+    "failure_pct": 3.39,
+    "test_samples": 2000,
+    "test_failures": 68,
+    "xgb_roc_auc": 0.9821733041042504,
+    "xgb_pr_auc": 0.8856401345716429,
+    "rf_roc_auc": 0.9854387407136768,
+    "rf_pr_auc": 0.8626726666655933,
+    "optimal_threshold": 0.08636363636363636,
+    "default_cost": 222800.0,
+    "min_cost": 209300.0,
+    "cost_savings": 13500.0,
+    "top_features": [
+        "Power_kW",
+        "Tool_wear_min",
+        "Rotational_speed_rpm"
+    ],
+    "cv_results": {
+        "Random Forest (Balanced Weights)": {
+            "Precision": 0.6120640808719005,
+            "Precision_std": 0.029331117031872158,
+            "Recall": 0.8523232323232325,
+            "Recall_std": 0.03340270983256498,
+            "F1-Score": 0.7121567932666444,
+            "F1_std": 0.02792876450818823,
+            "ROC-AUC": 0.9817225744679743,
+            "ROC_AUC_std": 0.01245477854692571
+        },
+        "SMOTE + Random Forest Pipeline": {
+            "Precision": 0.4967495062541145,
+            "Precision_std": 0.015543161873093162,
+            "Recall": 0.8780471380471381,
+            "Recall_std": 0.04654187696688711,
+            "F1-Score": 0.6343133196959643,
+            "F1_std": 0.023020687172010754,
+            "ROC-AUC": 0.9792578948487964,
+            "ROC_AUC_std": 0.011210761910819718
+        },
+        "XGBoost (Scale_Pos_Weight)": {
+            "Precision": 0.6657689393939392,
+            "Precision_std": 0.020407028140340767,
+            "Recall": 0.8412794612794613,
+            "Recall_std": 0.030306471933254822,
+            "F1-Score": 0.7427590488607437,
+            "F1_std": 0.01451401962662642,
+            "ROC-AUC": 0.9789049978045696,
+            "ROC_AUC_std": 0.01081037344280549
+        },
+        "SMOTE + XGBoost Pipeline": {
+            "Precision": 0.48649765104931897,
+            "Precision_std": 0.02940297823963053,
+            "Recall": 0.8743434343434343,
+            "Recall_std": 0.03230035666396637,
+            "F1-Score": 0.6249415910750422,
+            "F1_std": 0.03129662426157631,
+            "ROC-AUC": 0.9779795520695933,
+            "ROC_AUC_std": 0.009015207914750693
+        }
+    }
+}
