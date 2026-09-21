@@ -482,20 +482,6 @@ def run_pipeline():
     plt.close()
     print("Saved: images/shap_waterfall_case.png")
 
-    fig = plt.figure(figsize=(12, 3.2))
-    shap.force_plot(
-        explainer.expected_value,
-        shap_values.values[sample_idx],
-        X_test.iloc[sample_idx],
-        matplotlib=True,
-        show=False
-    )
-    plt.title(f'Local Force Plot: Prediction Drivers for Critical Incident #{sample_idx}', fontsize=12, fontweight='bold', pad=25)
-    plt.tight_layout()
-    plt.savefig('images/shap_force_plot.png', dpi=300, bbox_inches='tight')
-    plt.close()
-    print("Saved: images/shap_force_plot.png")
-
     # Save summary metrics to json for notebook and PDF generators
     metrics_summary = {
         'total_samples': len(df),

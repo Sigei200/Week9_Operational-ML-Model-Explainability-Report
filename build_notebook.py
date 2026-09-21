@@ -8,7 +8,6 @@ from nbformat.v4 import new_notebook, new_markdown_cell, new_code_cell
 import subprocess
 import sys
 import os
-from nbconvert.preprocessors import ExecutePreprocessor
 
 nb = new_notebook()
 cells = []
@@ -549,12 +548,7 @@ cells.append(new_markdown_cell("""## 12. Synthesis & Standard Operating Procedur
 nb.cells = cells
 
 output_nb_path = 'week9_operational_ml.ipynb'
-print(f"Executing notebook: {output_nb_path}...")
-ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
-ep.preprocess(nb, {'metadata': {'path': os.getcwd()}})
-
 with open(output_nb_path, 'w', encoding='utf-8') as f:
     nbf.write(nb, f)
 
-print(f"[SUCCESS] Successfully built and executed notebook with all outputs: {output_nb_path}")
-
+print(f"Successfully generated clean notebook structure: {output_nb_path}")
